@@ -2,7 +2,7 @@
   "name": "alibot",
   "version": "0.0.0",
   "private": true,
-  "author": "alibuilde@cern.ch",
+  "author": "alibuild@cern.ch",
   "description": "I love the smell of heavy ions in the morning",
   "dependencies": {
     "hubot": "^2.18.0",
@@ -11,8 +11,7 @@
     "hubot-google-images": "^0.2.6",
     "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.1.3",
-    "hubot-heroku-keepalive": "^1.0.2",
-    "hubot-jenkins-enhanced": "^1.1.0",
+    "hubot-jenkins-enhanced": "github:ktf/hubot-jenkins-enhanced",
     "hubot-maps": "0.0.2",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.3",
