@@ -16,6 +16,9 @@ module.exports = (robot) ->
   robot.hear /(where can i find )?alibuild troubleshooting/i, (res) ->
     res.send "They are at http://alisw.github.io/alibuild/troubleshooting.html"
 
+  robot.hear /(where is )?your knowledge/i, (res) ->
+    res.send "My code is at https://github.com/alisw/alihubot . Feel free to modify me, e.g. at scripts/example.coffee, and open a PR."
+
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
