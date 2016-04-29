@@ -10,8 +10,12 @@
 
 module.exports = (robot) ->
 
-  # robot.hear /foo/i, (res) ->
-  #   res.send config.admin_list
+  robot.hear /(where can I find )?alibuild instructions/i, (res) ->
+    res.send "They are at http://alisw.github.io/alibuild"
+
+  robot.hear /(where can i find )?alibuild troubleshooting/i, (res) ->
+    res.send "They are at http://alisw.github.io/alibuild/troubleshooting.html"
+
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
