@@ -1,3 +1,4 @@
+#!coffee
 # Description:
 #   Example scripts for you to examine and try out.
 #
@@ -18,6 +19,37 @@ module.exports = (robot) ->
 
   robot.hear /(where is )?your knowledge/i, (res) ->
     res.send "My code is at https://github.com/alisw/alihubot . Feel free to modify me, e.g. at scripts/example.coffee, and open a PR."
+
+  robot.respond /build ([^ ]+)/i, (res) ->
+    user = "#{res.envelope.user}"
+    if not robot.auth
+      res.reply "Looks like the auth plugin is not installed"
+      return
+
+    if not robot.auth.hasRole(res.envelope.user, "builder")
+      res.reply "Ehy, #{res.message.user.name}, you do not have the `builder' role. Please ask some admin to add you."
+      return
+    res.reply user
+    pkg = res.match[1]
+    tag = null
+    architecture = "slc7_x86-64"
+    if pkg.match "^vAN-20[0-9-]+$"
+      res.reply "It's a daily. I cannot force build those, yet."
+      return
+    if pkg.match "^v[0-9]+-[0-9]+-[0-9]+[a-z]*$"
+      overrides = "aliroot=#{pkg}"
+      pkg = "AliRoot"
+    if pkg.match "^v[0-9]+-[0-9]+-[0-9]+[a-z]*-[0-9]+$"
+      # Determine AliRoot tag from aliphysics
+      tag = pkg
+      match = /^(v[0-9]+-[0-9]+-[0-9]+[a-z]*).*/i.exec pkg
+      overrides  = "aliroot=#{match[1]} aliphysics=#{tag}"
+      pkg = "AliPhysics"
+    action = "Building package #{pkg}"
+    if overrides
+      action += " with overrides #{overrides}"
+    res.reply "I do not know yet how to build jenkins scripts." +
+              " If I did, I would however do the following: " + action
 
   #
   # robot.respond /open the (.*) doors/i, (res) ->
