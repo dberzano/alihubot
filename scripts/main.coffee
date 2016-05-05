@@ -51,6 +51,8 @@ module.exports = (robot) ->
     res.reply "I do not know yet how to build jenkins scripts." +
               " If I did, I would however do the following: " + action
 
+  robot.respond /who is your creator/, (res) ->
+    res.reply "I am a creation of Pdor, Pdor the great, son of Kmer, of the Ishtar tribe, from the lost land of Kfnir, one of the last 7 sages: Pfulur, Galér, Astaparigna, Sùsar, Param, Fusus and Tarìm."
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
