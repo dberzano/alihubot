@@ -2,6 +2,8 @@
 # Description:
 #   Example scripts for you to examine and try out.
 #
+# Commands:
+#   where can I find alibuild instructions? - Link to alibuild instructions
 # Notes:
 #   They are commented out by default, because most of them are pretty silly and
 #   wouldn't be useful and amusing enough for day to day huboting.
