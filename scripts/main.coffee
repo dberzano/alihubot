@@ -58,7 +58,7 @@ module.exports = (robot) ->
       res.reply "Your are not allowed to deploy. Please ask an admin for the `deployer` role"
       return
     res.reply "Starting job deploy-build-infrastructure in jenkins"
-    robot.jenkins.build("test-mesos")
+    robot.jenkins.build("test-pipeline")
 
   robot.respond /who is your creator/, (res) ->
     res.reply "I am a creation of Pdor, Pdor the great, son of Kmer, of the Ishtar tribe, from the lost land of Kfnir, one of the last 7 sages: Pfulur, Galér, Astaparigna, Sùsar, Param, Fusus and Tarìm."

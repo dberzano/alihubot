@@ -3,13 +3,9 @@
 #   Example scripts for you to examine and try out.
 #
 # Commands:
-#   where can I find alibuild instructions? - Link to alibuild instructions
 # Notes:
-#   They are commented out by default, because most of them are pretty silly and
-#   wouldn't be useful and amusing enough for day to day huboting.
-#   Uncomment the ones you want to try and experiment with.
-#
-#   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
+#   Catches all the messages which do not match any rule and which are
+#   addressed to us.
 module.exports = (robot) ->
   robot.catchAll (msg) ->
     if msg.message.text.match(/^@?alibot.*/)
