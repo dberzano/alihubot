@@ -22,12 +22,10 @@
 
 querystring = require 'querystring'
 
-jenkinsBuild = (msg) ->
+jenkinsBuild = (msg, job, params) ->
     token  = process.env.HUBOT_JENKINS_BUILD_TOKEN
     url    = process.env.HUBOT_JENKINS_URL
-
-    job    = querystring.escape msg.match[1]
-    params = msg.match[3]
+    job    = querystring.escape job
 
     path = if params then "#{url}/job/#{job}/buildWithParameters?#{params}" else "#{url}/job/#{job}/build"
     path = "#{path}?token=#{token}"
